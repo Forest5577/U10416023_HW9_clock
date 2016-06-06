@@ -30,6 +30,23 @@ public class TestClockPane extends Application {
 			pane.paintClock();
 		};
 
+    //use timeline in java FX
+		Timeline animation = new Timeline(new KeyFrame(Duration.millis(1000.00), eventHandler));
+
+    // Start animation
+    animation.setCycleCount(Timeline.INDEFINITE);
+
+    //create two buttons to stop and start the clock
+		Button btStop = new Button("Stop");
+		btStop.setOnAction(e -> {
+			animation.pause();
+		});
+		Button btStart = new Button("Start");
+		btStart.setOnAction(e -> {
+			animation.play();
+
+		});
+
     //set the second pane to show buttons
 		btStop.setPrefSize(100, 100);
 		btStart.setPrefSize(100, 100);
