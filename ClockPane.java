@@ -72,7 +72,7 @@ public class ClockPane extends Pane {
   }
 
   /** Paint the clock */
-  private void paintClock() {
+  public void paintClock() {
     // Initialize clock parameters
     double clockRadius =
       Math.min(getWidth(), getHeight()) * 0.8 * 0.5;
