@@ -23,6 +23,22 @@ public class TestClockPane extends Application {
 		primaryStage.show();
 		Stage stage = new Stage();
 		GridPane pane2 = new GridPane();
+
+    //add listener to pause and play the clock
+		EventHandler<ActionEvent> eventHandler = e -> {
+			pane.setCurrentTime();
+			pane.paintClock();
+		};
+
+    //set the second pane to show buttons
+		btStop.setPrefSize(100, 100);
+		btStart.setPrefSize(100, 100);
+		pane2.add(btStop,1,2);
+		pane2.add(btStart,2,2);
+		stage.setTitle("Control");
+		Scene scene2 = new Scene(pane2,200,100);
+		stage.setScene(scene2);
+		stage.show();
 	}
 
   //Main method
